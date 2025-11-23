@@ -84,7 +84,6 @@
                 <p><b>Height: </b>{{ breed1_info.height }}</p>
                 <p><b>Life Span: </b>{{ breed1_info.lifespan }}</p>
                 <p><b>Origin: </b>{{ breed1_info.origin }}</p>
-                <p><b>Bred For: </b>{{ breed1_info.bred_for }}</p>
                 <p><b>Temperament: </b>{{ breed1_info.temperament }}</p>
             {% else %}
                 <p>No breed information found.</p>
@@ -101,7 +100,6 @@
                 <p><b>Height: </b>{{ breed2_info.height }}</p>
                 <p><b>Life Span: </b>{{ breed2_info.lifespan }}</p>
                 <p><b>Origin: </b>{{ breed2_info.origin }}</p>
-                <p><b>Bred For: </b>{{ breed2_info.bred_for }}</p>
                 <p><b>Temperament: </b>{{ breed2_info.temperament }}</p>
             {% else %}
                 <p>No breed information found.</p>
@@ -109,10 +107,10 @@
 
             <!-- for random dog image (img output)-->
             {% if random_image %}
-                <p><b>Random photo:</b></p>
+            <h2>Random photo:</h2>
                 <img src="{{ random_image }}" alt="Dog Image">
             {% else %}
-                <p>Random image not found.</p>
+                <p>Random image not requested.</p>
             {% endif %}
 
         </div>

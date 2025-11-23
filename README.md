@@ -29,7 +29,7 @@ Users can view breed characteristics, compare two breeds, and generate random do
 **API Used and Its Purpose**
 
 **The Dog API** is the primary data source for this web application.
-It provides information about various dog breeds including weight, height, origin, reason for breeding, temperament, and images.
+It provides information about various dog breeds including weight, height, origin, temperament, and images.
 This application uses the API to populate the dropdown selection with all available breeds, retrieve detailed breed information,
 and provide a random image at the user's request.
 This API integration allows real-time data access, providing structured data presentation within the web app.
