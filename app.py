@@ -54,7 +54,7 @@ def get_breed_info(breed_name):
                 "temperament": breed.get("temperament", "Unknown"),
                 "image": breed.get("image", {}).get("url")
             }
-    return None
+    return "Breed not found."
 
 
 # function to get random dog image - for radio button section in form
