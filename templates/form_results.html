@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica', sans-serif;
+        }
+
+        body {
+            background-color: #D1F2FF;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #FFFEEB;
+            color: #000000;
+            padding: 10px;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #FFFEEB;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px #000000;
+            margin: 10px;
+            padding: 20px;
+            width: calc(50% - 20px);
+        }
+
+        .card img {
+            max-width: 50%;
+            display: block;
+            margin: 10px auto;
+            border-radius: 8px;
+        }
+
+        .card h2, .card p {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 1024px) {
+            .card {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dashboard</h1>
+    </header>
+    <main>
+        <div class="card">
+            <h1>Dog Breed Information</h1>
+
+            <!-- for breed information (dropdown output) -->
+            <h2>Breed 1: {{ breed1_info.name }}</h2>
+            {% if breed1_info.image %}
+                <img src="{{ breed1_info.image }}" alt="Dog Image">
+            {% endif %}
+
+            {% if breed1_info %}
+                <p><b>Weight: </b>{{ breed1_info.weight }}</p>
+                <p><b>Height: </b>{{ breed1_info.height }}</p>
+                <p><b>Life Span: </b>{{ breed1_info.lifespan }}</p>
+                <p><b>Origin: </b>{{ breed1_info.origin }}</p>
+                <p><b>Bred For: </b>{{ breed1_info.bred_for }}</p>
+                <p><b>Temperament: </b>{{ breed1_info.temperament }}</p>
+            {% else %}
+                <p>No breed information found.</p>
+            {% endif %}
+
+            <!-- for breed information (text output) -->
+            <h2>Breed 2: {{ breed2_info.name }}</h2>
+            {% if breed1_info.image %}
+                <img src="{{ breed2_info.image }}" alt="Dog Image">
+            {% endif %}
+
+            {% if breed1_info %}
+                <p><b>Weight: </b>{{ breed2_info.weight }}</p>
+                <p><b>Height: </b>{{ breed2_info.height }}</p>
+                <p><b>Life Span: </b>{{ breed2_info.lifespan }}</p>
+                <p><b>Origin: </b>{{ breed2_info.origin }}</p>
+                <p><b>Bred For: </b>{{ breed2_info.bred_for }}</p>
+                <p><b>Temperament: </b>{{ breed2_info.temperament }}</p>
+            {% else %}
+                <p>No breed information found.</p>
+            {% endif %}
+
+            <!-- for random dog image (img output)-->
+            {% if random_image %}
+                <p><b>Random photo:</b></p>
+                <img src="{{ random_image }}" alt="Dog Image">
+            {% else %}
+                <p>Random image not found.</p>
+            {% endif %}
+
+        </div>
+    </main>
+</body>
+</html>
