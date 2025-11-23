@@ -71,9 +71,9 @@
     </header>
     <main>
         <div class="card">
-            <h1>Dog Breed Information</h1>
+            <h1>Dog Breed Information</h1><br>
 
-            <!-- for breed information (dropdown output) -->
+            <!-- for breed information (dropdown1 output) -->
             <h2>Breed 1: {{ breed1_info.name }}</h2>
             {% if breed1_info.image %}
                 <img src="{{ breed1_info.image }}" alt="Dog Image">
@@ -84,26 +84,29 @@
                 <p><b>Height: </b>{{ breed1_info.height }}</p>
                 <p><b>Life Span: </b>{{ breed1_info.lifespan }}</p>
                 <p><b>Origin: </b>{{ breed1_info.origin }}</p>
-                <p><b>Temperament: </b>{{ breed1_info.temperament }}</p>
+                <p><b>Temperament: </b>{{ breed1_info.temperament }}</p><br>
             {% else %}
                 <p>No breed information found.</p>
             {% endif %}
 
-            <!-- for breed information (text output) -->
+            <!-- for breed information (dropdown2 output) -->
             <h2>Breed 2: {{ breed2_info.name }}</h2>
-            {% if breed1_info.image %}
+            {% if breed2_info.image %}
                 <img src="{{ breed2_info.image }}" alt="Dog Image">
             {% endif %}
 
-            {% if breed1_info %}
+            {% if breed2_info %}
                 <p><b>Weight: </b>{{ breed2_info.weight }}</p>
                 <p><b>Height: </b>{{ breed2_info.height }}</p>
                 <p><b>Life Span: </b>{{ breed2_info.lifespan }}</p>
                 <p><b>Origin: </b>{{ breed2_info.origin }}</p>
-                <p><b>Temperament: </b>{{ breed2_info.temperament }}</p>
+                <p><b>Temperament: </b>{{ breed2_info.temperament }}</p><br>
             {% else %}
                 <p>No breed information found.</p>
             {% endif %}
+
+            <!-- for favorite breed (text box output) -->
+            <h2>Your favorite dog breed is: {{ fav_breed_info }}!</h2><br>
 
             <!-- for random dog image (img output)-->
             {% if random_image %}

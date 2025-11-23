@@ -36,8 +36,8 @@ This API integration allows real-time data access, providing structured data pre
 
 **Features Implemented**
 
-- **Dropdown Menu:** allows users to select a dog breed and display its information.
-- **Text Input:** allows users to input a dog breed and display its information.
+- **Dropdown Menus:** allows users to select dog breeds and compare their information.
+- **Text Input:** allows users to input their favorite dog breed and display a corresponding message.
 - **Radio Button:** allows users to opt in to displaying a random dog image.
-- **Error and Missing-Data Handling:** manages invalid user input and missing API fields by substituting placeholder text (e.g., “Unknown”).
+- **Missing-Data Handling:** manages missing API fields by substituting placeholder text (e.g., “Unknown”).
 - **Responsive User Interface:** designed with responsive to ensure readability across desktop and mobile devices.

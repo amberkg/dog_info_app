@@ -90,8 +90,11 @@
     <form method="POST" action="{{ url_for('index') }}">
         <h1>All About Dogs!</h1>
         {{ form.csrf_token }}
-        <p>{{ form.breed_dropdown.label }}</p>
-        {{ form.breed_dropdown(class="form-input") }}
+        <p>{{ form.breed_dropdown1.label }}</p>
+        {{ form.breed_dropdown1(class="form-input") }}
+
+        <p>{{ form.breed_dropdown2.label }}</p>
+        {{ form.breed_dropdown2(class="form-input") }}
 
         <p>{{ form.breed_input.label }}</p>
         {{ form.breed_input(class="form-input") }}

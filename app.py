@@ -69,11 +69,15 @@ def get_random_image():
 # creating the form
 class UserForm(FlaskForm):
     # dropdown for user to choose dog breed #1
-    breed_dropdown = SelectField("Select a dog breed to see its information",
+    breed_dropdown1 = SelectField("Select a dog breed to see its information",
                                  [validators.DataRequired()], choices=[])
 
-    # text input for user to enter dog breed #2
-    breed_input = StringField("Enter a dog breed to compare information", [validators.DataRequired()])
+    # dropdown for user to choose dog breed #2
+    breed_dropdown2 = SelectField("Select a dog breed to compare its information",
+                                  [validators.DataRequired()], choices=[])
+
+    # text input for user to enter fav dog breed
+    breed_input = StringField("Enter your favorite dog breed", [validators.DataRequired()])
 
     # radio button (y/n) for random dog image
     random_pic = RadioField("Do you want to see a random dog picture?",
@@ -89,24 +93,27 @@ def index():
 
     # populate dropdown based on breeds in json
     breeds = get_breeds()
-    form.breed_dropdown.choices = [(item["name"], item["name"]) for item in breeds]
+    form.breed_dropdown1.choices = [(item["name"], item["name"]) for item in breeds]
+    form.breed_dropdown2.choices = [(item["name"], item["name"]) for item in breeds]
 
     if request.method == "POST":
-        breed_dropdown_entered = form.breed_dropdown.data
+        breed_dropdown1_entered = form.breed_dropdown1.data
+        breed_dropdown2_entered = form.breed_dropdown2.data
         breed_input_entered = form.breed_input.data
         random_pic_entered = form.random_pic.data
 
-        # breed information - dropdown form section
-        breed1_info = get_breed_info(breed_dropdown_entered)
+        # breed information - dropdowns form section
+        breed1_info = get_breed_info(breed_dropdown1_entered)
+        breed2_info = get_breed_info(breed_dropdown2_entered)
 
         # breed information - text input section
-        breed2_info = get_breed_info(breed_input_entered)
+        fav_breed_info = breed_input_entered
 
         # random image - radio button form section
         random_image = get_random_image() if random_pic_entered == "Yes" else None
 
         return render_template("form_results.html", breed1_info=breed1_info, breed2_info=breed2_info,
-                               random_image=random_image)
+                               fav_breed_info=fav_breed_info, random_image=random_image)
 
     return render_template('form.html', form=form)
 
