@@ -50,6 +50,7 @@ def get_breed_info(breed_name):
                 "height": height_combined,
                 "lifespan": breed.get("life_span", "Unknown"),
                 "origin": breed.get("origin", "Unknown"),
+                "bred_for": breed.get("bred_for", "Unknown"),
                 "temperament": breed.get("temperament", "Unknown"),
                 "image": breed.get("image", {}).get("url")
             }
